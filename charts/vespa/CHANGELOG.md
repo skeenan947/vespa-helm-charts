@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/unoplat/vespa-helm-charts/compare/vespa-0.2.2...vespa-v0.2.3) (2024-05-07)
+
+
+### Bug Fixes
+
+* lower cpu and memory footprint to make it possible to run easily on local cmpute ([d36df44](https://github.com/unoplat/vespa-helm-charts/commit/d36df44ad0c6a1a149be13777a49c6a88ce78254))
+
 ## [0.2.2](https://github.com/unoplat/vespa-helm-charts/compare/vespa-0.2.1...vespa-v0.2.2) (2024-03-27)
 
 
