@@ -54,6 +54,9 @@ spec:
           env:
           - name: VESPA_CONFIGSERVERS 
             value: vespa-0.vespa.{{ .Release.Namespace }}.svc.cluster.local
+          {{- with .Values.env }}
+          {{- toYaml . | nindent 10 }}
+          {{- end }}
             
   volumeClaimTemplates:
   {{- range .Values.volumeClaimTemplates }}
