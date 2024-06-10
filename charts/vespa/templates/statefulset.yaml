@@ -52,8 +52,10 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           env:
+          {{- if .Values.vespaConfigServer.enabled}}
           - name: VESPA_CONFIGSERVERS
             value: vespa-0.vespa.{{ .Release.Namespace }}.svc.cluster.local
+          {{- end }}
           {{- with .Values.env }}
           {{- toYaml . | nindent 10 }}
           {{- end }}
