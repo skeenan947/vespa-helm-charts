@@ -30,17 +30,13 @@ podAnnotations: {}
 podLabels:
   app: vespa
 
-selectorLabels:
-  app: vespa
-  
-
 statefulSet:
   name: vespa
   ports:
     - containerPort: 19071
     - containerPort: 8081
-      
-podSecurityContext: 
+
+podSecurityContext:
   # fsGroup: 2000
 
 readinessProbe:
@@ -49,7 +45,7 @@ readinessProbe:
      port: 19071
      scheme: HTTP
 
-securityContext: 
+securityContext:
   # capabilities:
   #   drop:
   #   - ALL
@@ -87,7 +83,7 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: 
+resources:
   requests:
     memory: "1000Mi"
     cpu: "500m"
@@ -110,7 +106,7 @@ volumes: []
 #     optional: false
 
 # Additional volumeMounts on the output Deployment definition.
-volumeMounts: 
+volumeMounts:
   - name: vespa-storage
     mountPath: /opt/vespa/var/
 
@@ -132,4 +128,4 @@ volumeClaimTemplates:
          - ReadWriteOnce
        resources:
          requests:
-           storage: 1Gi    
+           storage: 1Gi

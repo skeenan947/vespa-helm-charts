@@ -11,7 +11,7 @@ spec:
   {{- end }}
   selector:
     matchLabels:
-      {{- toYaml .Values.selectorLabels | nindent 6 }}
+      {{- toYaml .Values.podLabels | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -52,12 +52,11 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           env:
-          - name: VESPA_CONFIGSERVERS 
+          - name: VESPA_CONFIGSERVERS
             value: vespa-0.vespa.{{ .Release.Namespace }}.svc.cluster.local
           {{- with .Values.env }}
           {{- toYaml . | nindent 10 }}
           {{- end }}
-            
   volumeClaimTemplates:
   {{- range .Values.volumeClaimTemplates }}
   - metadata:
