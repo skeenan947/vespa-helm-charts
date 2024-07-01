@@ -8,11 +8,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      {{- toYaml .Values.podLabels | nindent 6 }}
+      app: vespa-max-map-count
   template:
     metadata:
       labels:
-        {{- toYaml .Values.labels | nindent 8 }}
+        app: vespa-max-map-count
     spec:
       hostNetwork: true
       hostPID: true
