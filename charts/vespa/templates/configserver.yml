@@ -56,9 +56,9 @@ spec:
         # Use 4G or more for real use cases
         resources:
           requests:
-            memory: "3000m"
+            memory: "4000Mi"
           limits:
-            memory: "3000m"
+            memory: "4000Mi"
   volumeClaimTemplates:
   # The below are tiny volumes for demo purposes.
   - metadata:
