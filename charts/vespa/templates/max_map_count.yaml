@@ -1,0 +1,39 @@
+# Make sure the node's max_map_count is set to 262144 as required by istio
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: vespa-max-map-count
+  labels:
+    {{- include "vespa.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- toYaml .Values.podLabels | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- toYaml .Values.labels | nindent 8 }}
+    spec:
+      hostNetwork: true
+      hostPID: true
+      hostIPC: true
+      containers:
+        - name: sysctl-set
+          image: alpine:3.6
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/sh", "-c"]
+          args: [ "while true; do sysctl -w vm.max_map_count=262144; sleep 3600; done"]
+          securityContext:
+            privileged: true
+          resources:
+            limits:
+              cpu: 100m
+              memory: 100Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
+      tolerations:
+        - effect: "NoExecute"
+          operator: "Exists"
+        - effect: "NoSchedule"
+          operator: "Exists"
