@@ -1,0 +1,14 @@
+# Copyright Vespa.ai. Licensed under the terms of the Apache 2.0 license. See LICENSE in the project root.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+data:
+  VESPA_CONFIGSERVERS: "{{ .Release.Name }}-configserver-0.vespa-internal.default.svc.cluster.local,
+  {{ .Release.Name }}-configserver-1.vespa-internal.default.svc.cluster.local,
+  {{ .Release.Name }}-configserver-2.vespa-internal.default.svc.cluster.local"
+  VESPA_CONFIGSERVER_JVMARGS: "-Xms1024M -Xmx1024M"
+  VESPA_CONFIGPROXY_JVMARGS: "-Xms1024M -Xmx1024M"
+
+# The JVMARGS settings are to minimize, for demo purposes only -
+# remove for production use.
