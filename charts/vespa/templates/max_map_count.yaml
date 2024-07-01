@@ -4,7 +4,7 @@ kind: DaemonSet
 metadata:
   name: vespa-max-map-count
   labels:
-    {{- include "vespa.labels" . | nindent 4 }}
+    app: {{ .Release.Name }}-max-map-count
 spec:
   selector:
     matchLabels:
