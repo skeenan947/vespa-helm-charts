@@ -4,6 +4,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{ .Release.Name }}-content
+  namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.content.replicas }}
   selector:

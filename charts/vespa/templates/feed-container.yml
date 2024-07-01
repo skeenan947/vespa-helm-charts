@@ -4,6 +4,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{ .Release.Name }}-feed-container
+  namespace: {{ .Values.namespace }}
 spec:
   replicas: {{ .Values.feed.replicas }}
   selector:

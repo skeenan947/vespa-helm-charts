@@ -4,6 +4,8 @@
 
 replicaCount: 1
 name: zencore-vespa
+namespace: danswer
+
 image:
   registry: vespaengine
   repository: vespa

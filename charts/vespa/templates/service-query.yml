@@ -4,6 +4,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Release.Name }}-query
+  namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Release.Name }}
 spec:

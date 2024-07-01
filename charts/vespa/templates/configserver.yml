@@ -4,6 +4,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{ .Release.Name }}-configserver
+  namespace: {{ .Values.namespace }}
 spec:
   # Use three servers for proper ZooKeeper quorum:
   replicas: {{ .Values.configserver.replicas }}
