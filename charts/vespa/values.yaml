@@ -9,7 +9,7 @@ image:
   repository: vespa
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "8.277.17"
+  tag: "8.363.17"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -26,6 +26,8 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
+service:
+  type: ClusterIP
 admin:
   replicas: 1
 feed:
