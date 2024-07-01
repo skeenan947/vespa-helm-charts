@@ -24,7 +24,7 @@ spec:
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
-            name: vespa-config
+            name: {{ .Release.Name }}-config
         securityContext:
           runAsUser: 1000
         resources:

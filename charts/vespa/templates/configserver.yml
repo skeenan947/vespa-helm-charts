@@ -51,7 +51,7 @@ spec:
           mountPath: /workspace
         envFrom:
         - configMapRef:
-            name: vespa-config
+            name: {{ .Release.Name }}-config
         # Note that the below are minimum resources for demo use.
         # Use 4G or more for real use cases
         resources:
