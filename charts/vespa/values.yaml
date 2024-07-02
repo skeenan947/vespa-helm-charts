@@ -122,11 +122,6 @@ affinity: {}
 env:
   - name: VESPA_CONFIGSERVERS
     value: vespa-0.vespa.default.svc.cluster.local
-  - name: VESPA_CONFIGSERVER_JVMARGS
-    value: "-Xms3072M -Xmx3072M"
-  - name: VESPA_CONFIGPROXY_JVMARGS
-    value: "-Xms1024M -Xmx1024M"
-
 
 volumeClaimTemplates:
    - metadata:
