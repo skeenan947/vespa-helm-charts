@@ -15,4 +15,4 @@ spec:
       protocol: TCP
       name: vespa-config
   selector:
-    app: {{ .Release.Name }}-configserver
+    app: {{ .Release.Name }}-query-container
