@@ -5,9 +5,9 @@ metadata:
   name: {{ .Release.Name }}-config
   namespace: {{ .Values.namespace }}
 data:
-  VESPA_CONFIGSERVERS: "{{ .Release.Name }}-configserver-0.zencore-vespa-internal.{{ .Values.namespace }}.svc.cluster.local,
-  {{ .Release.Name }}-configserver-1.zencore-vespa-internal.{{ .Values.namespace }}.svc.cluster.local,
-  {{ .Release.Name }}-configserver-2.zencore-vespa-internal.{{ .Values.namespace }}.svc.cluster.local"
+  VESPA_CONFIGSERVERS: "{{ .Release.Name }}-configserver-0.danswer-vespa-internal.{{ .Values.namespace }}.svc.cluster.local,
+  {{ .Release.Name }}-configserver-1.danswer-vespa-internal.{{ .Values.namespace }}.svc.cluster.local,
+  {{ .Release.Name }}-configserver-2.danswer-vespa-internal.{{ .Values.namespace }}.svc.cluster.local"
   VESPA_CONFIGSERVER_JVMARGS: "-Xms1024M -Xmx1024M"
   VESPA_CONFIGPROXY_JVMARGS: "-Xms1024M -Xmx1024M"
 
