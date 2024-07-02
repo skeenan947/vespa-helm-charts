@@ -12,3 +12,4 @@ spec:
       name: http
   selector:
     app: {{ .Release.Name }}-configserver
+    name: {{ .Release.Name }}-internal
