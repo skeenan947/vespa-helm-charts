@@ -10,6 +10,10 @@ spec:
       targetPort: 8081
       protocol: TCP
       name: http
+    - port: 19071
+      targetPort: 19071
+      protocol: TCP
+      name: rpc
   selector:
     app: {{ .Release.Name }}-configserver
     name: {{ .Release.Name }}-internal
