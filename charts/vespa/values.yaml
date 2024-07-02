@@ -88,10 +88,10 @@ ingress:
 
 resources:
   requests:
-    memory: "1000Mi"
-    cpu: "500m"
+    memory: "5000Mi"
+    cpu: "1000m"
   limits:
-    memory: "1500Mi"
+    memory: "5000Mi"
     cpu: "1000m"
 
 autoscaling:
@@ -122,6 +122,11 @@ affinity: {}
 env:
   - name: VESPA_CONFIGSERVERS
     value: vespa-0.vespa.default.svc.cluster.local
+  - name: VESPA_CONFIGSERVER_JVMARGS
+    value: "-Xms3072M -Xmx3072M"
+  - name: VESPA_CONFIGPROXY_JVMARGS
+    value: "-Xms1024M -Xmx1024M"
+
 
 volumeClaimTemplates:
    - metadata:
