@@ -10,9 +10,5 @@ spec:
       targetPort: 8080
       protocol: TCP
       name: http
-    - port: 19071
-      targetPort: 19071
-      protocol: TCP
-      name: vespa-config
   selector:
     app: {{ .Release.Name }}-configserver

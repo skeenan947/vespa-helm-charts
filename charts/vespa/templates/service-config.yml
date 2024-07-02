@@ -1,0 +1,18 @@
+# Copyright Vespa.ai. Licensed under the terms of the Apache 2.0 license. See LICENSE in the project root.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-configserver
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  # Set LoadBalancer for an endpoint reachable from the internet
+  #type: LoadBalancer
+  selector:
+    app: {{ .Release.Name }}-configserver
+  ports:
+  - name: api
+    port: 19071
+    targetPort: 19071
