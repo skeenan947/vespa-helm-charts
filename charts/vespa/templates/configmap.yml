@@ -10,9 +10,6 @@ data:
   {{ .Release.Name }}-configserver-2.zencore-vespa-internal.{{ .Values.namespace }}.svc.cluster.local"
   VESPA_CONFIGSERVER_JVMARGS: "-Xms1024M -Xmx1024M"
   VESPA_CONFIGPROXY_JVMARGS: "-Xms1024M -Xmx1024M"
-  VESPA_CONFIG_SOURCES: "{{ .Release.Name }}-configserver-0.zencore-vespa-internal.{{ .Values.namespace }}.svc.cluster.local:19071,
-  {{ .Release.Name }}-configserver-1.zencore-vespa-internal.{{ .Values.namespace }}.svc.cluster.local:19071,
-  {{ .Release.Name }}-configserver-2.zencore-vespa-internal.{{ .Values.namespace }}.svc.cluster.local:19071"
 
 # The JVMARGS settings are to minimize, for demo purposes only -
 # remove for production use.
