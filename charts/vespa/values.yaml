@@ -31,12 +31,12 @@ serviceAccount:
 service:
   type: ClusterIP
 admin:
-  replicas: 1
+  replicas: 0
 feed:
-  replicas: 2
+  replicas: 0
 query:
-  replicas: 2
+  replicas: 0
 configserver:
-  replicas: 3
+  replicas: 1
 content:
-  replicas: 2
+  replicas: 0
